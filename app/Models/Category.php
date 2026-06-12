@@ -14,8 +14,10 @@ class Category extends Model
         'description',
         'is_active'
     ];
-
     protected $casts = [
         'is_active' => 'boolean',
     ];
+    public function product(){
+        return $this->hasMany(Product::class);
+    }
 }
